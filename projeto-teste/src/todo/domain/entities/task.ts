@@ -1,5 +1,4 @@
 
-
 export class TaskEntity {
     readonly id: string;
     readonly createdAt: Date;
