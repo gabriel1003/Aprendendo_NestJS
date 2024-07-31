@@ -5,4 +5,6 @@ import { TaskEntity } from "../entities/task";
 export abstract class TaskRepository {
     abstract setTask( args: TaskEntity): Promise<TaskEntity>;
 
+    abstract getTasks(): Promise<TaskEntity[]>;
+    
 }

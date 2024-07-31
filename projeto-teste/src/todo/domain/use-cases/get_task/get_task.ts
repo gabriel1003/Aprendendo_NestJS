@@ -1,14 +1,15 @@
 import { Injectable } from "@nestjs/common";
-import { GetTaskRepository } from "../../repositories/get_task_repository";
+
 import { TaskEntity } from "../../entities/task";
+import { TaskRepository } from "../../repositories/task_repository";
 
 @Injectable()
 export class GetTaskUseCase {
 
-    constructor( readonly getRepository: GetTaskRepository) {}
+    constructor( readonly getRepository: TaskRepository) {}
 
-    async call( args: TaskEntity): Promise<TaskEntity> {
+    async call( args: TaskEntity): Promise<TaskEntity[]> {
 
-        return await this.getRepository.getTask(args);
+        return await this.getRepository.getTasks();
     }
 }

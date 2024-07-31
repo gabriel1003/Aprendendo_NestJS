@@ -20,10 +20,10 @@ id: input["id"],
         }))
     }
 
-    @Get("/id")
-    async getTask(@Param('id') id: string): Promise<TaskEntity> {
+    @Get()
+    async getTask(): Promise<TaskEntity[]> {
 
-        const taskEntity = new TaskEntity({id});
+        const taskEntity = new TaskEntity({});
 
         const task = await this.getTaskUseCase.call(taskEntity);
 
